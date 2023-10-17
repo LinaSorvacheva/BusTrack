@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     @GetMapping("/")
-    public String index(@RequestParam(value = "name", required = falsego) String name){
+    public String index(@RequestParam(value = "name", required = false) String name){
         System.out.println(name);
         return "index";
     }
