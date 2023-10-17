@@ -2,10 +2,7 @@ package ru.aptech.bustrack.controllers;
 import org.hibernate.annotations.common.reflection.XMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.aptech.bustrack.Entities.User;
 import ru.aptech.bustrack.services.UserService;
 
@@ -16,7 +13,8 @@ public class UserController {
     @Autowired
     private UserService userService;
     @GetMapping("/")
-    public String index(){
+    public String index(@RequestParam(value = "name", required = falsego) String name){
+        System.out.println(name);
         return "index";
     }
 }
